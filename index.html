@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My love</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page">
+
+    <div id="hedlinecontainer">
+      <div id="shine">Can You Be My Valentine?</div>
+    </div>
+
+    <div class="gallery">
+      <img src="image/IMG20231103160246.jpg" alt="my fabie">
+      <img src="image/IMG20240426174745.jpg" alt="my girl">
+      <img src="image/IMG20240514133315.jpg" alt="my baby">
+      <img src="image/Screenshot 2025-09-26 211420.png" alt="my love">
+      <img src="image/IMG_9994.jpg" alt="my woman">
+    </div>
+
+    <div class="buttons">
+      <button onclick="toPage1()">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+
+
+  </div>
+
+ <script>
+  function toPage1() {
+    window.location.href = "main.html";
+  }
+
+  const noBtn = document.getElementById("noBtn");
+  const buttons = document.querySelector(".buttons");
+  let escaped = false;
+
+  noBtn.addEventListener("click", () => {
+    if (!escaped) {
+      noBtn.style.position = "absolute";
+      escaped = true;
+    }
+
+    const area = buttons.getBoundingClientRect();
+    const btn = noBtn.getBoundingClientRect();
+    const padding = 10;
+
+    const maxX = area.width - btn.width - padding;
+    const maxY = area.height - btn.height - padding;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+  });
+</script>
+
+
+
+  <script>
+    function toPage1() {
+      window.location.href = "main.html";
+    }
+  </script>
+</body>
+</html>
